@@ -107,14 +107,8 @@ for i in result6:
        minValue = min
        minName = result6[i]
 
-   if result6[i] == max:
-       maxlist.append(i)
-
-   if result6[i] == min:
-       minlist.append(i)
-
-result7=[max,maxlist]
-result8=[min,minlist]
+result7=[maxName]
+result8=[minName]
 
 ## Nested within the loops to print for each day, week, month before increasing to next
 print(result1)
