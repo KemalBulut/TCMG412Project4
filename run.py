@@ -15,16 +15,15 @@ with open("python.txt","wb") as textfile:
 ## Open and work off of the new local file
 file = open ("python.txt")
 
-<<<<<<< main
 ## Defining variables for final results desired including formatting for output data
-=======
->>>>>>> main
 result1 = {"day data": {}}
 result2 = {"week data": {}}
 result3 = {"month data": {}}
 result4 = {"request not successful": 0}
 result5 = {"request redirected elsewhere": 0}
 result6 = {"filetime request frequency": {}}
+
+## still need to be established so that they actually output what they're supposed to
 result7 = {"most requested file"}
 result8 = {"least requested file"}
 
@@ -34,10 +33,7 @@ week = None
 months_done = []
 
 for line in file:
-<<<<<<< main
     
-=======
->>>>>>> main
     if len(line) >= 56:
         data = line.split()
         date = data[3][1::].split(':')
@@ -46,30 +42,21 @@ for line in file:
             days += 1
             if days % 7 == 0:
                 week = date_day
-<<<<<<< main
        
         ## Count file requests per day
-=======
->>>>>>> main
         if date[0] in result1["day data"]:
             result1["day data"][date[0]] += 1
         else:
             result1["day data"][date[0]] = 0
-<<<<<<< main
         
         ## Count file requests per week
-=======
->>>>>>> main
         if week in result2["week data"]:
             result2["week data"][week] += 1
         else:
             result2["week data"][week] = 0
         month = date[0][3::]
-<<<<<<< main
         
         ## Create a new file for the new month data
-=======
->>>>>>> main
         if month not in months_done:
             file_name = month[:3:] + month[4::]
             if (len(file_name)) == 7:
@@ -77,16 +64,12 @@ for line in file:
                 print(file_name)
             months_done.append(month)
         month_file.write(line)
-<<<<<<< main
         
         ## Count file requests per month
-=======
->>>>>>> main
         if month in result3["month data"]:
             result3["month data"][month] += 1
         else:
             result3["month data"][month] = 0
-<<<<<<< main
         
         ## 400 level requests, unsuccessful count
         if data[-2][0] == "4":
@@ -98,18 +81,11 @@ for line in file:
         
         
         ## File request frequency count
-=======
-        if data[-2][0] == "4":
-            result4["request not successful"] += 1
-        if data[-2][0] == "3":
-            result5["requests redirected elsewhere"] += 1
->>>>>>> main
         if data[6] in result6["filetime request frequency"]:
             result6["filetime request frequency"][data[6]] += 1
         else:
             result6["filetime request frequency"][data[6]] = 1
 
-<<<<<<< main
 
 ## Nested within the loops to print for each day, week, month before increasing to next
 print(result1)
@@ -117,19 +93,11 @@ print(result2)
 print(result3)
 
 ## Printed at the end?
-=======
-print(result1)
-print(result2)
-print(result3)
->>>>>>> main
 print(result4)
 print(result5)
 print(result6)
 print(result7)
 print(result8)
-<<<<<<< main
 
 
 
-=======
->>>>>>> main
