@@ -91,6 +91,26 @@ for line in file:
         else:
             result6["filetime request frequency"][data[6]] = 1
 
+max = result6
+min = result6
+maxlist = []
+minlist = []
+for i in result6:
+   if result6[i] > max:
+       max = result6[i]
+       maxlist=[i]
+   if result6[i] < min:
+       min = result6[i]
+       minlist=[i]
+
+   if result6[i] == max:
+       maxlist.append(i)
+
+   if result6[i] == min:
+       minlist.append(i)
+
+result7=[max,maxlist]
+result8=[min,minlist]
 
 ## Nested within the loops to print for each day, week, month before increasing to next
 print(result1)
