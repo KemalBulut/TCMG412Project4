@@ -27,6 +27,11 @@ result6 = {"filetime request frequency": {}}
 result7 = {"most requested file"}
 result8 = {"least requested file"}
 
+fileMost = None
+fileLeast = None
+countMost = 0
+countLeast = 0
+
 date_day = None
 days = 0
 week = None
