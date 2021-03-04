@@ -10,3 +10,64 @@ with open("python.txt","wb") as textfile:
            textfile.write(chunk)
 
 file = open ("python.txt")
+
+result1 = {"day data": {}}
+result2 = {"week data": {}}
+result3 = {"month data": {}}
+result4 = {"request not successful": 0}
+result5 = {"request redirected elsewhere": 0}
+result6 = {"filetime request frequency": {}}
+result7 = {"most requested file"}
+result8 = {"least requested file"}
+
+date_day = None
+days = 0
+week = None
+months_done = []
+
+for line in file:
+    if len(line) >= 56:
+        data = line.split()
+        date = data[3][1::].split(':')
+        if not (date_day == date[0]):
+            date_day = date[0]
+            days += 1
+            if days % 7 == 0:
+                week = date_day
+        if date[0] in result1["day data"]:
+            result1["day data"][date[0]] += 1
+        else:
+            result1["day data"][date[0]] = 0
+        if week in result2["week data"]:
+            result2["week data"][week] += 1
+        else:
+            result2["week data"][week] = 0
+        month = date[0][3::]
+        if month not in months_done:
+            file_name = month[:3:] + month[4::]
+            if (len(file_name)) == 7:
+                month_file = open(month[:3:] + month[4::] + ".txt", 'w')
+                print(file_name)
+            months_done.append(month)
+        month_file.write(line)
+        if month in result3["month data"]:
+            result3["month data"][month] += 1
+        else:
+            result3["month data"][month] = 0
+        if data[-2][0] == "4":
+            result4["request not successful"] += 1
+        if data[-2][0] == "3":
+            result5["requests redirected elsewhere"] += 1
+        if data[6] in result6["filetime request frequency"]:
+            result6["filetime request frequency"][data[6]] += 1
+        else:
+            result6["filetime request frequency"][data[6]] = 1
+
+print(result1)
+print(result2)
+print(result3)
+print(result4)
+print(result5)
+print(result6)
+print(result7)
+print(result8)
