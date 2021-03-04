@@ -93,15 +93,19 @@ for line in file:
 
 max = result6
 min = result6
-maxlist = []
-minlist = []
+maxName = " "
+maxValue = 0
+minName = " "
+minValue = 0
 for i in result6:
    if result6[i] > max:
        max = result6[i]
        maxlist=[i]
+       maxValue = max
    if result6[i] < min:
        min = result6[i]
        minlist=[i]
+       minValue = min
 
    if result6[i] == max:
        maxlist.append(i)
