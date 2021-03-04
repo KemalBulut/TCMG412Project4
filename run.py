@@ -72,10 +72,11 @@ for line in file:
         ## 400 level requests, unsuccessful count
         if data[-2][0] == "4":
             result4["request not successful"] += 1
+            if data[-2][0] == "3":
+                result5["requests redirected elsewhere"] += 1
         
         ## 300 level requests, unsuccessful count
-        if data[-2][0] == "3":
-            result5["requests redirected elsewhere"] += 1
+        
         
         ## File request frequency count
         if data[6] in result6["filetime request frequency"]:
