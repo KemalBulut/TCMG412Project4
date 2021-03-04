@@ -24,8 +24,8 @@ result5 = {"request redirected elsewhere": 0}
 result6 = {"filetime request frequency": {}}
 
 ## still need to be established so that they actually output what they're supposed to
-result7 = {"most requested file"}
-result8 = {"least requested file"}
+result7 = {"most requested file": {}}
+result8 = {"least requested file": {}}
 
 fileMost = None
 fileLeast = None
@@ -107,8 +107,8 @@ for i in result6:
        minValue = min
        minName = result6[i]
 
-result7=[maxName]
-result8=[minName]
+result7[0]=[maxName]
+result8[0]=[minName]
 
 ## Nested within the loops to print for each day, week, month before increasing to next
 print(result1)
