@@ -1,0 +1,29 @@
+Separate Log files into months:
+
+read date, while month - real month:
+
+while file!=end
+
+(OCT 94 -> OCT 95) 12 months:
+File Names: OCT94 DEC94 JAN95 FEB95 MAR95 APR95 MAY95 JUN95 JUL95 AUG95 SEP95 OCT95
+
+while (Date = month #)
+
+for each line:
+count requests/day
+count requests/week
+count requests/month
+count 300 codes
+count 400 codes
+count instances of file
+	name in between GET and HTTP
+output into month file
+
+
+OUTPUT Data:
+
+1. Per day, week, and month
+2. 400 codes and 300 codes
+3. Most and least requested
+
+
