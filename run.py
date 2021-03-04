@@ -41,17 +41,20 @@ for line in file:
             if days % 7 == 0:
                 week = date_day
        
+        ## Count file requests per day
         if date[0] in result1["day data"]:
             result1["day data"][date[0]] += 1
         else:
             result1["day data"][date[0]] = 0
         
+        ## Count file requests per week
         if week in result2["week data"]:
             result2["week data"][week] += 1
         else:
             result2["week data"][week] = 0
         month = date[0][3::]
         
+        ## Create a new file for the new month data
         if month not in months_done:
             file_name = month[:3:] + month[4::]
             if (len(file_name)) == 7:
@@ -60,17 +63,21 @@ for line in file:
             months_done.append(month)
         month_file.write(line)
         
+        ## Count file requests per month
         if month in result3["month data"]:
             result3["month data"][month] += 1
         else:
             result3["month data"][month] = 0
         
+        ## 400 level requests, unsuccessful count
         if data[-2][0] == "4":
             result4["request not successful"] += 1
         
+        ## 300 level requests, unsuccessful count
         if data[-2][0] == "3":
             result5["requests redirected elsewhere"] += 1
         
+        ## File request frequency count
         if data[6] in result6["filetime request frequency"]:
             result6["filetime request frequency"][data[6]] += 1
         else:
