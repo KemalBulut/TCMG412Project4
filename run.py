@@ -22,6 +22,8 @@ result3 = {"month data": {}}
 result4 = {"request not successful": 0}
 result5 = {"request redirected elsewhere": 0}
 result6 = {"filetime request frequency": {}}
+
+## still need to be established so that they actually output what they're supposed to
 result7 = {"most requested file"}
 result8 = {"least requested file"}
 
